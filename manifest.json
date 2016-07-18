@@ -1,0 +1,18 @@
+{
+	"manifest_version": 2,
+	"name": "Video Stream and Capture",
+	"description": "This enables screen capture Video",
+	"version": "1.0.0",
+	"icons": {"128": "icon.png"},
+	"browser_action": {
+		"default_title": "Video",
+		"default_icon": "icon.png"
+	},
+	"background": {
+    	"scripts": ["popup.js"],
+    	"persistent": false
+	},
+	"permissions": [
+		"tabs"
+	]
+}
