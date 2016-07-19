@@ -11,6 +11,8 @@ function toggle() {
             local_stream.stop();
         local_stream = null;
 
+        chrome.storage.local.set({'audio': false});
+        
         document.querySelector('button').innerHTML = "Enable Capture";
         console.log('Desktop sharing stopped...');
     }
@@ -58,5 +60,8 @@ function onAccessApproved(desktop_id) {
  * Click handler to init the desktop capture grab
  */
 document.querySelector('button').addEventListener('click', function(e) {
+    chrome.storage.local.get('audio', function(data) {
+        console.log(data);
+    });
     toggle();
 });
